@@ -49,7 +49,7 @@ Check out the <a href="?view=faq"><b>FAQs</b></a> to learn more.</p>
 <p>Already have a Namecoin identity?  Then
 <a href="?view=login"><b>log in</b></a>!
 Alternatively if you want to check out some other Namecoin identities,
-take a look at <a href="?name=domob">mine</a> or query for an arbitrary
+take a look at <a href="?name=jkenney">mine</a> or query for an arbitrary
 name:</p>
 <form method="get" action="?" class="offset1">
   <div class="input-prepend input-append">
