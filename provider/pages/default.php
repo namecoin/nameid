@@ -28,8 +28,7 @@ if (!isset ($fromIndex) || $fromIndex !== "yes")
 
 <div class="alert alert-warning"><b>NameID</b> is still a very early
 experiment, so <b>use at your own risk</b>!
-The <a href="?view=faq">FAQs</a> have some more information.  If you
-want to help out, please <a href="?view=contact">contact me</a>!</div>
+The <a href="?view=faq">FAQs</a> have some more information.</a></div>
 
 <p><a href="http://namecoin.info/"><b>Namecoin</b></a>
 is an amazing technology that allows anyone to register arbitrary
@@ -50,7 +49,7 @@ Check out the <a href="?view=faq"><b>FAQs</b></a> to learn more.</p>
 <p>Already have a Namecoin identity?  Then
 <a href="?view=login"><b>log in</b></a>!
 Alternatively if you want to check out some other Namecoin identities,
-take a look at <a href="?name=domob">mine</a> or query for an arbitrary
+take a look at <a href="?name=jkenney">mine</a> or query for an arbitrary
 name:</p>
 <form method="get" action="?" class="offset1">
   <div class="input-prepend input-append">

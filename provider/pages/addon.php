@@ -30,11 +30,6 @@ if (!isset ($fromIndex) || $fromIndex !== "yes")
 add-on are still in an early, experimental phase.  So please be warned,
 although everything seemed to work fine in our tests.</div>
 
-<div class="alert alert-info">This add-on is still under development, and
-some ideas for improvements have not yet been implemented&mdash;please
-excuse a lot of rough edges.  Nevertheless, if you have any ideas, comments
-or suggestions, please <a href="?view=contact">contact me</a>!</div>
-
 <p>Since the steps required for a fully manual sign-in are quite complicated
 and troublesome, you can <b>automate them</b> by using the
 <b>NameID add-on</b> for <a href="https://www.mozilla.org/">Mozilla</a>

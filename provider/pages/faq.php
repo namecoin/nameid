@@ -27,6 +27,11 @@ if (!isset ($fromIndex) || $fromIndex !== "yes")
 <h1>FAQs</h1>
 
 <div class="well well-small">
+  <p class="faq">Should I use this version or <a href="https://nameid.org">NameID.org?</a></p>
+  <p>If you need to ask this question then you should definitely be at <a href="https://nameid.org">NameID.org</a>. This is a testnet version, suitable only for testing. Namecoin Testnet is not as secure as the main network, so <b>you may lose your testnet ID or have it stolen at any time.</b> The rest of this FAQ relates to the mainnet version at <a href="https://nameid.org">NameID.org</a>, any assumptions made about safety are wrong for this testnet version. </p>
+</div>
+
+<div class="well well-small">
   <p class="faq">What is Namecoin?</p>
   <p><a href="http://namecoin.info/">Namecoin</a> is a peer-to-peer, completely
 decentralised system based on <a href="https://bitcoin.org/">Bitcoin</a>
@@ -96,7 +101,7 @@ there's no need to keep any sensitive information around.</p>
 
 <div class="well well-small">
   <p class="faq">How do I sign into an OpenID-enabled site?</p>
-  <p>Simply enter <code>https://nameid.org/</code> into the
+  <p>Simply enter <code>https://nmctest.net/nameid/</code> into the
 login-box.  You will be redirected to <b>NameID</b> where you can log in
 with your name, and if that is successful, you will be returned to the
 OpenID consumer site, where you are then authenticated with your identity.</p>
@@ -122,7 +127,7 @@ sites you want to sign into.</p>
   <p class="faq">Where do I get a Namecoin identity from?</p>
   <p>Please consult the <a href="http://namecoin.info/">Namecoin website</a>
 for more details, or take a look at the
-<a href="http://forum.namecoin.info/">Namecoin forum</a> for help.</p>
+<a href="https://forum.namecoin.info/">Namecoin forum</a> for help.</p>
 </div>
 
 <div class="well well-small">
@@ -144,14 +149,14 @@ The service provided is free as in free beer, I run <b>NameID</b>
 as a service to the Namecoin community and to help it grow.  I don't
 want to earn any money from it.  Furthermore, <b>NameID</b> is also
 <b>free as in freedom</b> with the
-<a href="https://gitorious.org/nameid/">source code</a>
+<a href="https://github.com/John-Kenney/nameid">source code</a>
 available to anyone who wants to check it out or even reuse it for
 own projects under the
 <a href="https://www.gnu.org/licenses/agpl-3.0.html"><b>AGPL v3</b></a>.</p>
   <p>For the first question, you have to decide on your own whether or
 not you trust me based on the information on this page.  In any case you can
 also just
-<a href="https://gitorious.org/nameid/">grab the source</a> and
+<a href="https://github.com/John-Kenney/nameid">grab the source</a> and
 set up <b>your own server</b> if you like the idea!</p>
 </div>
 
@@ -159,7 +164,7 @@ set up <b>your own server</b> if you like the idea!</p>
   <p class="faq">How can I use NameID in my own project?</p>
   <p>As mentioned in multiple other answers on this page, <b>NameID</b> is
 free software and the code can be obtained from
-<a href="https://gitorious.org/nameid/">Gitorious</a>.  You can use this
+<a href="https://github.com/John-Kenney/nameid">my github</a>.  You can use this
 code more or less directly to set up a &quot;clone&quot; of <b>NameID</b>
 on <b>your own server</b>.  Alternatively, you can even use the
 <b>authentication code</b> to implement Namecoin login
@@ -168,46 +173,3 @@ on <b>your own server</b>.  Alternatively, you can even use the
 in the sources for a how-to on this.</p>
 </div>
 
-<div class="well well-small">
-  <p class="faq">Is the code signed?</p>
-  <p>The source code in the
-<a href="https://gitorious.org/nameid/">Git repository</a> has tags
-signed by my key.  You can find the key fingerprint
-on the <a href="?view=contact">contact page</a> or look it even
-up in the blockchain for my own identity
-<a href="?name=domob"><code>id/domob</code></a>.  If you
-want to be sure to have the correct code, please check it out there and
-verify the tags against my key.</p>
-</div>
-
-<div class="well well-small">
-  <p class="faq">Does NameID have a .bit domain?</p>
-  <p>Yes, you can use any of
-<b><a href="https://nameid.bit/">nameid.bit</a></b>,
-<a href="https://name-id.bit/">name-id.bit</a>,
-<a href="https://myid.bit/">myid.bit</a>,
-<a href="https://yourid.bit/">yourid.bit</a>
-and <b><a href="https://id.bit/">id.bit</a></b>.  Note, however, that
-you have to use <code>https://nameid.<b>org</b>/</code> for signing into
-OpenID sites anyway, because otherwise it will most probably fail when the
-consumer site tries to connect to <b>NameID</b> on its own in order to
-verify your request.</p>
-  <p>I'm grateful to <a href="http://www.cassini.tv/">cassini</a>, who
-donated the premium name <a href="https://id.bit/">id.bit</a> to
-this project!</p>
-</div>
-
-<div class="well well-small">
-  <p class="faq">Can I help?</p>
-  <p>Yes, definitely!  Every help is welcome&mdash;<a href="?view=contact">let
-me know</a> if you have any ideas, comments or suggestions, and if you are
-graphically skilled, <b>NameID</b> needs a cool logo.  If you are a coder,
-you can surely also find some tasks to help out, and if you have some spare
-coins, you can donate them to the addresses shown at the bottom of the page.</p>
-</div>
-
-<div class="well well-small">
-  <p class="faq">I have more questions...</p>
-  <p>Just <a href="?view=contact">contact me</a> and let me know how
-I can help you.</p>
-</div>

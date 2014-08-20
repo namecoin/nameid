@@ -233,7 +233,6 @@ function tryView ()
           break;
 
         case "addon":
-        case "contact":
         case "faq":
           $status = $view;
           break;
@@ -318,7 +317,7 @@ header ("Content-Type: text/html; charset=utf-8");
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 
-<title>NameID: Your Crypto-OpenID</title>
+<title>Testnet NameID</title>
 
 <meta charset="utf-8" />
 
@@ -331,14 +330,13 @@ header ("Content-Type: text/html; charset=utf-8");
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inverse">
       <div class="navbar-inner">
-        <a class="brand" href="?">NameID</a>
+        <a class="brand" href="?">Testnet NameID</a>
         <ul class="nav">
 <?php
 $classHome = "";
 $classLogin = "";
 $classAddOn = "";
 $classFAQ = "";
-$classContact = "";
 switch ($status)
   {
   case "default":
@@ -358,10 +356,6 @@ switch ($status)
     $classFAQ = "active";
     break;
 
-  case "contact":
-    $classContact = "active";
-    break;
-
   default:
     // Something else, ignore.
     break;
@@ -375,9 +369,6 @@ switch ($status)
             <a href="?view=addon">Add-On</a>
           </li>
           <li class="<?php echo $classFAQ; ?>"><a href="?view=faq">FAQs</a></li>
-          <li class="<?php echo $classContact; ?>">
-            <a href="?view=contact">Contact</a>
-          </li>
         </ul>
       </div>
     </div>
@@ -396,10 +387,9 @@ include ("pages/$status.php");
 by <a href="http://www.domob.eu/">Daniel Kraft</a>.
 <b>NameID</b> is free software under the terms of the
 <a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL v3</a>,
-check out the <a href="https://gitorious.org/nameid/">source code</a>!</p>
+check out the <a href="https://github.com/John-Kenney/nameid">source code</a>!</p>
 
-  <p class="text-center">BTC: 1<b>Nameid</b>3brhZrbTN1M7t6afMAfVBiGioJT
-| NMC: ND6yWYKZS9NnMPnfN6C6yZHG8gRe3r69GR</p>
+<p class="text-center">This is a testnet version of NameID running on Namecoin Testnet, maintained by John Kenney, click to see my other <a href="https://nmctest.net">Namecoin Testnet Projects</a></p>
 
 </body>
 </html>
