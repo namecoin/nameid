@@ -233,7 +233,6 @@ function tryView ()
           break;
 
         case "addon":
-        case "contact":
         case "faq":
           $status = $view;
           break;
@@ -338,7 +337,6 @@ $classHome = "";
 $classLogin = "";
 $classAddOn = "";
 $classFAQ = "";
-$classContact = "";
 switch ($status)
   {
   case "default":
@@ -358,10 +356,6 @@ switch ($status)
     $classFAQ = "active";
     break;
 
-  case "contact":
-    $classContact = "active";
-    break;
-
   default:
     // Something else, ignore.
     break;
@@ -375,9 +369,6 @@ switch ($status)
             <a href="?view=addon">Add-On</a>
           </li>
           <li class="<?php echo $classFAQ; ?>"><a href="?view=faq">FAQs</a></li>
-          <li class="<?php echo $classContact; ?>">
-            <a href="?view=contact">Contact</a>
-          </li>
         </ul>
       </div>
     </div>
