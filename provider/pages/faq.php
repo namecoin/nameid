@@ -27,6 +27,11 @@ if (!isset ($fromIndex) || $fromIndex !== "yes")
 <h1>FAQs</h1>
 
 <div class="well well-small">
+  <p class="faq">Should I use this version or <a href="https://nameid.org">NameID.org?</a></p>
+  <p>If you need to ask this question then you should definitely be at <a href="https://nameid.org">NameID.org</a>. This is a testnet version, suitable only for testing. Namecoin Testnet is not as secure as the main network, so <b>you may lose your testnet ID or have it stolen at any time.</b> The rest of this FAQ relates to the mainnet version at <a href="https://nameid.org">NameID.org</a>, any assumptions made about safety are wrong for this testnet version. </p>
+</div>
+
+<div class="well well-small">
   <p class="faq">What is Namecoin?</p>
   <p><a href="http://namecoin.info/">Namecoin</a> is a peer-to-peer, completely
 decentralised system based on <a href="https://bitcoin.org/">Bitcoin</a>
@@ -96,7 +101,7 @@ there's no need to keep any sensitive information around.</p>
 
 <div class="well well-small">
   <p class="faq">How do I sign into an OpenID-enabled site?</p>
-  <p>Simply enter <code>https://nameid.org/</code> into the
+  <p>Simply enter <code>https://nmctest.net/nameid/</code> into the
 login-box.  You will be redirected to <b>NameID</b> where you can log in
 with your name, and if that is successful, you will be returned to the
 OpenID consumer site, where you are then authenticated with your identity.</p>
