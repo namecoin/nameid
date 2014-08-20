@@ -28,8 +28,7 @@ if (!isset ($fromIndex) || $fromIndex !== "yes")
 
 <div class="alert alert-warning"><b>NameID</b> is still a very early
 experiment, so <b>use at your own risk</b>!
-The <a href="?view=faq">FAQs</a> have some more information.  If you
-want to help out, please <a href="?view=contact">contact me</a>!</div>
+The <a href="?view=faq">FAQs</a> have some more information.</a></div>
 
 <p><a href="http://namecoin.info/"><b>Namecoin</b></a>
 is an amazing technology that allows anyone to register arbitrary
