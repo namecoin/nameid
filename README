@@ -4,9 +4,9 @@ NameID
 With namecoin, you can register names corresponding to online identities of
 the form "id/something", which can hold your email address, real name, other
 contact info, public key fingerprints, or whatever else you desire.
-Furthermore, since ownership of a name is associated to possession of
-a corresponding private key, one can proove it using a signature with
-that private key.
+Furthermore, since ownership of a name is associated to possession of a
+corresponding private key, one can prove it using a signature with that
+private key.
 
 OpenID is a system which allows you to sign into a plethora of websites
 using a single identity, which is provided by some OpenID server (the
