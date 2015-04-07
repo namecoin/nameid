@@ -396,7 +396,7 @@ include ("pages/$status.php");
 by <a href="http://www.domob.eu/">Daniel Kraft</a>.
 <b>NameID</b> is free software under the terms of the
 <a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL v3</a>,
-check out the <a href="https://gitorious.org/nameid/">source code</a>!</p>
+check out the <a href="https://gitlab.com/nameid/nameid">source code</a>!</p>
 
   <p class="text-center">BTC: 1<b>Nameid</b>3brhZrbTN1M7t6afMAfVBiGioJT
 | NMC: <b>NAmeid</b>5L2ZcaQFszYwk4sa929zbQymaaWa</p>

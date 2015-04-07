@@ -144,14 +144,14 @@ The service provided is free as in free beer, I run <b>NameID</b>
 as a service to the Namecoin community and to help it grow.  I don't
 want to earn any money from it.  Furthermore, <b>NameID</b> is also
 <b>free as in freedom</b> with the
-<a href="https://gitorious.org/nameid/">source code</a>
+<a href="https://gitlab.com/nameid/nameid">source code</a>
 available to anyone who wants to check it out or even reuse it for
 own projects under the
 <a href="https://www.gnu.org/licenses/agpl-3.0.html"><b>AGPL v3</b></a>.</p>
   <p>For the first question, you have to decide on your own whether or
 not you trust me based on the information on this page.  In any case you can
 also just
-<a href="https://gitorious.org/nameid/">grab the source</a> and
+<a href="https://gitlab.com/nameid/nameid">grab the source</a> and
 set up <b>your own server</b> if you like the idea!</p>
 </div>
 
@@ -159,7 +159,7 @@ set up <b>your own server</b> if you like the idea!</p>
   <p class="faq">How can I use NameID in my own project?</p>
   <p>As mentioned in multiple other answers on this page, <b>NameID</b> is
 free software and the code can be obtained from
-<a href="https://gitorious.org/nameid/">Gitorious</a>.  You can use this
+<a href="https://gitlab.com/nameid/nameid">Gitlab</a>.  You can use this
 code more or less directly to set up a &quot;clone&quot; of <b>NameID</b>
 on <b>your own server</b>.  Alternatively, you can even use the
 <b>authentication code</b> to implement Namecoin login
@@ -171,7 +171,7 @@ in the sources for a how-to on this.</p>
 <div class="well well-small">
   <p class="faq">Is the code signed?</p>
   <p>The source code in the
-<a href="https://gitorious.org/nameid/">Git repository</a> has tags
+<a href="https://gitlab.com/nameid/nameid">Git repository</a> has tags
 signed by my key.  You can find the key fingerprint
 on the <a href="?view=contact">contact page</a> or look it even
 up in the blockchain for my own identity
