@@ -1,7 +1,7 @@
 <?php
 /*
     NameID, a namecoin based OpenID identity provider.
-    Copyright (C) 2013-2014 by Daniel Kraft <d@domob.eu>
+    Copyright (C) 2013-2015 by Daniel Kraft <d@domob.eu>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as published by
@@ -389,6 +389,7 @@ $fields = array (new SimpleField ("Real Name", "name"),
                  new OTR_Field ("OTR Key", "otr", true, true),
                  new SimpleField ("Bitmessage", "bitmessage", true, true),
                  new SimpleField ("XMPP", "xmpp", true, true),
+                 new SimpleField ("Twister", "twister", true, true),
                  new ProtocolledField ("Bitcoin", "bitcoin", "bitcoin",
                                        true, true),
                  new ProtocolledField ("Namecoin", "namecoin", "namecoin",
