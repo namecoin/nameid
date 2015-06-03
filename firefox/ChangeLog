@@ -1,6 +1,9 @@
 ChangeLog for NameID Login Extension
 ====================================
 
+Version 0.6.2 (trunk):
+  * Use XMLHttpRequest internally instead of a manual HTTP connection.
+
 Version 0.6.1 (2015-02-21):
   * Add an extension icon.
   * Fix warning given by Mozilla add-on checker.

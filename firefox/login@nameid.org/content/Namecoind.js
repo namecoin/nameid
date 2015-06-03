@@ -67,8 +67,7 @@ Namecoind.prototype =
           params: args,
           id: id
         };
-      var resString = this.requestHTTP (JSON.stringify (jsonData));
-      var res = JSON.parse (resString);
+      var res = this.requestHTTP (jsonData);
 
       /* Ensure the ID matches, should always be the case.  */
       assert (res.id === id);
@@ -86,51 +85,32 @@ Namecoind.prototype =
     },
 
     /**
-     * Send an HTTP request and return the result.
-     * @param req Request data to send.
-     * @return The returned data.
+     * Send a JSON-RPC HTTP request to the server.
+     * @param reqData Request (as JSON object) to send.
+     * @return The returned JSON result.
      */
-    requestHTTP: function (req)
+    requestHTTP: function (reqData)
     {
-      var ch = NetUtil.newChannel (this.url);
-      ch.QueryInterface (Components.interfaces.nsIHttpChannel);
-      var auth = this.user + ":" + this.pass;
-      ch.setRequestHeader ("Authorization", "Basic " + btoa (auth), false);
-      ch.setRequestHeader ("Accept", "application/json", false);
+      var XMLHttpRequest
+        = Components.Constructor ("@mozilla.org/xmlextras/xmlhttprequest;1",
+                                  "nsIXMLHttpRequest");
+      var req = new XMLHttpRequest ();
+      req.withCredentials = true;
+      req.open ("POST", this.url, false, this.user, this.pass);
 
-      var s = Components.classes["@mozilla.org/io/string-input-stream;1"]
-                .createInstance (Components.interfaces.nsIStringInputStream);
-      s.setData (req, req.length);
-      ch.QueryInterface (Components.interfaces.nsIUploadChannel);
-      ch.setUploadStream (s, "application/json", -1);
-      ch.requestMethod = "POST";
+      var reqString = JSON.stringify (reqData);
+      log ("HTTP Request:\n" + reqString);
 
-      s = ch.open ();
-      var len = ch.getResponseHeader ("Content-Length");
-      if (len === 0)
-        {
-          s.close ();
-          throw "The connection to your local namecoind failed.";
-        }
-      var string = NetUtil.readInputStreamToString (s, len, null);
-      s.close ();
+      req.responseType = "text";
+      req.setRequestHeader ("Content-Type", "application/json");
+      req.setRequestHeader ("Accept", "application/json");
+      req.send (reqString);
 
-      /* Sometimes accessing responseStatus throws.  Catch this and fail
-         with a better error messsage.  */
-      var code;
-      try
-        {
-          code = ch.responseStatus;
-        }
-      catch (exc)
-        {
-          throw "Connection timeout, please try again.";
-        }
+      log ("HTTP Response status: " + req.status);
+      log ("HTTP Response:\n" + req.responseText);
 
-      log ("Response code: " + code);
-      log ("namecoind response: " + string);
-
-      switch (code)
+      assert (req.readyState === req.DONE);
+      switch (req.status)
         {
         case 401:
           throw "The NameID add-on could not authenticate with the locally"
@@ -144,14 +124,12 @@ Namecoind.prototype =
              but an error occured during processing it.  This has to be
              handled elsewhere, though.  404 means that the requested method
              was not found.  */
-          return string;
+          return JSON.parse (req.responseText);
 
         default:
           throw "Unknown error connecting to namecoind.";
           break;
         }
-
-      /* Should never be reached.  */
       assert (false);
     }
 
