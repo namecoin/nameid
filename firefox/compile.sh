@@ -1,6 +1,6 @@
 #!/bin/bash
 #   NameID, a namecoin based OpenID identity provider.
-#   Copyright (C) 2013-2014 by Daniel Kraft <d@domob.eu>
+#   Copyright (C) 2013-2015 by Daniel Kraft <d@domob.eu>
 #
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
 # Compile the add-on into an XPI.
 
 dir=login@nameid.org
-zipfile=NameIdLogin-0.6.1.xpi
+zipfile=NameIdLogin-0.7.1.xpi
 
 files="bootstrap.js chrome.manifest install.rdf icon.png"
 for file in Namecoind.js NameIdAddon.js \

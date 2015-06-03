@@ -1,8 +1,10 @@
 ChangeLog for NameID Login Extension
 ====================================
 
-Version 0.6.2 (trunk):
+Version 0.7.1 (2015-06-03):
   * Use XMLHttpRequest internally instead of a manual HTTP connection.
+  * Set maximum supported Firefox version to 42.0.
+  * First version that will be supplied Mozilla-signed on the website.
 
 Version 0.6.1 (2015-02-21):
   * Add an extension icon.
