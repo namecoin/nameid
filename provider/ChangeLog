@@ -1,8 +1,9 @@
 ChangeLog for NameID Identity Provider
 ======================================
 
-Version 0.7.0 (trunk):
+Version 0.7.1 (2015-06-03):
   * Add support for Twister handles.
+  * Include new (signed) Firefox extension.
 
 Version 0.6.0 (2015-02-21):
   * Support more id/ fields and allow some of them to be arrays or objects.

@@ -41,8 +41,8 @@ and troublesome, you can <b>automate them</b> by using the
 browsers.  Try it out:</p>
 
 <div class="offset1"><a class="btn btn-success"
-      href="NameIdLogin-0.6.1.xpi">NameID Easy Login<br />
-<small>Version 0.6.1</small></a></div>
+      href="NameIdLogin-0.7.1.xpi">NameID Easy Login<br />
+<small>Version 0.7.1</small></a></div>
 
 <p class="padTop">Alternatively, you can also install the extension
 from the
