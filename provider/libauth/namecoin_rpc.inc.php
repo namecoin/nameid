@@ -1,7 +1,7 @@
 <?php
 /*
     NameID, a namecoin based OpenID identity provider.
-    Copyright (C) 2013 by Daniel Kraft <d@domob.eu>
+    Copyright (C) 2013,2015 by Daniel Kraft <d@domob.eu>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as published by
@@ -240,7 +240,7 @@ class HttpNamecoin extends NamecoinRpc
     curl_setopt ($ch, CURLOPT_HTTPHEADER, $headers);
     curl_setopt ($ch, CURLOPT_USERAGENT, "NameID PHP Identity-Provider");
 
-    curl_setopt ($ch, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
+    curl_setopt ($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
     curl_setopt ($ch, CURLOPT_USERPWD, "{$this->user}:{$this->password}");
 
     $res = curl_exec ($ch);
