@@ -398,6 +398,8 @@ $fields = array (new SimpleField ("Real Name", "name"),
                                        "huntercoin", true, true),
                  new ProtocolledField ("Litecoin", "litecoin", "litecoin",
                                        true, true),
+                 new ProtocolledField ("Faircoin", "faircoin", "faircoin",
+                                       true, true),
                  new SimpleField ("Auroracoin", "auroracoin", true, true),
                  new SimpleField ("Peercoin", "ppcoin", true, true));
 
