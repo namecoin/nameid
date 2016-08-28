@@ -35,9 +35,10 @@ require_once ("Auth/OpenID/Discover.php");
 
 $status = "unknown";
 
-// Disable caching.
-header("Cache-Control: no-cache");
-header("Pragma: no-cache");
+// Set headers to disable caching and enable content security policy.
+header ("Cache-Control: no-cache");
+header ("Pragma: no-cache");
+header ("Content-Security-Policy: default-src 'self'; frame-ancestors: 'none'");
 
 // Construct the basic worker classes.
 $session = new Session ($sessionName);

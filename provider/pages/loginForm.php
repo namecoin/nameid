@@ -1,7 +1,7 @@
 <?php
 /*
     NameID, a namecoin based OpenID identity provider.
-    Copyright (C) 2013-2014 by Daniel Kraft <d@domob.eu>
+    Copyright (C) 2013-2016 by Daniel Kraft <d@domob.eu>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as published by
@@ -71,87 +71,18 @@ message:</label></p>
   <button type="submit" name="cancel" class="btn" id="cancel">Cancel</button>
 </p>
 
-</form>
+<!-- Store login data into the page for retrieval from JS.  -->
+<input type="hidden" name="nonce" id="nonce"
+       value="<?php echo $html->escape ($loginNonce); ?>" />
+<input type="hidden" name="url" id="url"
+       value="<?php echo $html->escape ($serverUri); ?>" />
 
-<!-- ======================================================================= -->
+</form>
 
 <!-- Load JS script.  -->
 <script type="text/javascript" src="js/NameId.js"></script>
+<script type="text/javascript" src="js/LoginForm.js"></script>
 
-<!-- Custom JS code for this page.  -->
-<script type="text/javascript">
-
-/* The NameId object used.  Will be constructed in onload event.  */
-var nameid = null;
-
-/* Store basic login information from PHP.  */
-var data = <?php
-$data = array ("nonce" => $loginNonce,
-               "url" => $serverUri);
-echo json_encode ($data);
-?>;
-
-/* Update the challenge field.  */
-function updateChallenge (evt)
-{
-  var id = document.getElementById ("identity").value;
-  var msg = nameid.getChallenge (id);
-  document.getElementById ("message").value = msg;
-}
-
-/* Try to sign the challenge message via the add-on.  */
-function signChallenge ()
-{
-  var id = document.getElementById ("identity").value;
-  var signature = nameid.signChallenge (id);
-
-  if (signature === null)
-    return false;
-
-  document.getElementById ("signature").value = signature;
-  return true;
-}
-
-/* Set up everything on page load.  */
-function setup (evt)
-{
-  nameid = new NameId (data.url, data.nonce);
-  nameid.requestApi ();
-
-  if (nameid.hasApi ())
-    {
-      var body = document.getElementsByTagName ("body");
-      body[0].className = "withAddon";
-    }
-
-  var idEntry = document.getElementById ("identity");
-  idEntry.addEventListener ("change", updateChallenge);
-
-  var cancelClicked = false;
-  function handleSubmit (evt)
-    {
-      if (cancelClicked)
-        return;
-
-      var res = signChallenge ();
-      if (!res)
-        evt.preventDefault ();
-    }
-  function handleCancel (evt)
-    {
-      cancelClicked = true;
-    }
-  if (nameid.hasApi ())
-    {
-      var form = document.getElementById ("loginForm");
-      form.addEventListener ("submit", handleSubmit);
-      var cancel = document.getElementById ("cancel");
-      cancel.addEventListener ("click", handleCancel);
-    }
-}
-window.addEventListener ("load", setup);
-
-</script>
 <noscript class="hideWithAddon">Since you have JavaScript disabled, you will
 have to construct the message to sign on your own.  Good luck with that!
 The nonce is: <?php echo $html->escape ($loginNonce); ?></noscript>
