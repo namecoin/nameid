@@ -5,7 +5,7 @@ With namecoin, you can register names corresponding to online identities of
 the form "id/something", which can hold your email address, real name, other
 contact info, public key fingerprints, or whatever else you desire.
 Furthermore, since ownership of a name is associated to possession of
-a corresponding private key, one can proof it using a signature with
+a corresponding private key, one can proove it using a signature with
 that private key.
 
 OpenID is a system which allows you to sign into a plethora of websites
@@ -15,5 +15,8 @@ by implementing an OpenID identity provider which allows anyone owning
 a id/ identity to sign into it, authenticating with a private key signature.
 You don't have to (and can't in fact) register an account with NameID
 and also don't need to remember a password, because the first is done
-by registering an id/ name with the decentralised namecoin network, and the
-second is replaced by your name's private key.
+by registering an id/ name with the namecoin network, and the second is
+replaced by your name's private key.
+
+Requires PHP OpenID - https://github.com/openid/php-openid
+
