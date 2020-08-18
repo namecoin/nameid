@@ -2,7 +2,7 @@
 <?php
 /*
     NameID, a namecoin based OpenID identity provider.
-    Copyright (C) 2013-2014 by Daniel Kraft <d@domob.eu>
+    Copyright (C) 2013-2020 by Daniel Kraft <d@domob.eu>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as published by
@@ -56,15 +56,19 @@ assert (!$res);
 $res = $nc->verifyMessage ($addr, $msg, base64_encode ("forged sig"));
 assert (!$res);
 
-$res = $nc->isValidAddress ($addr);
+$res = $nc->isLegacyAddress ($addr);
 assert ($res);
-$res = $nc->isValidAddress (array (5));
+$res = $nc->isLegacyAddress (array (5));
 assert (!$res);
-$res = $nc->isValidAddress ("");
+$res = $nc->isLegacyAddress ("");
 assert (!$res);
-$res = $nc->isValidAddress (NULL);
+$res = $nc->isLegacyAddress (NULL);
 assert (!$res);
-$res = $nc->isValidAddress ("invalid-address");
+$res = $nc->isLegacyAddress ("invalid-address");
+assert (!$res);
+$res = $nc->isLegacyAddress ("6QYV9s9vvM3qH8eGr8cqvtQZLi8NBTm1TN");
+assert (!$res);
+$res = $nc->isLegacyAddress ("nc1q7x7j4jvqgs8f32ach38wum6zsnu06n9hd8np8d");
 assert (!$res);
 
 $nc->close ();

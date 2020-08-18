@@ -1,7 +1,7 @@
 <?php
 /*
     NameID, a namecoin based OpenID identity provider.
-    Copyright (C) 2013-2014 by Daniel Kraft <d@domob.eu>
+    Copyright (C) 2013-2020 by Daniel Kraft <d@domob.eu>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as published by
@@ -92,7 +92,8 @@ class Authenticator
 
     /* Perform actual value checks.  */
 
-    if ($this->nc->verifyMessage ($addr, $msg, $signature))
+    if ($this->nc->isLegacyAddress ($addr)
+        && $this->nc->verifyMessage ($addr, $msg, $signature))
       return TRUE;
 
     if ($value !== NULL && isset ($value->signer))
@@ -105,7 +106,7 @@ class Authenticator
           $arr = array ();
 
         foreach ($arr as $addr)
-          if ($this->nc->isValidAddress ($addr)
+          if ($this->nc->isLegacyAddress ($addr)
               && $this->nc->verifyMessage ($addr, $msg, $signature))
             return TRUE;
       }

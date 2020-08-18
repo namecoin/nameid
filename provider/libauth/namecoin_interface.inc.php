@@ -1,7 +1,7 @@
 <?php
 /*
     NameID, a namecoin based OpenID identity provider.
-    Copyright (C) 2013-2014 by Daniel Kraft <d@domob.eu>
+    Copyright (C) 2013-2020 by Daniel Kraft <d@domob.eu>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as published by
@@ -75,19 +75,22 @@ class NamecoinInterface
   }
 
   /**
-   * Check if the argument is a valid address.
+   * Check if the argument is a valid address of legacy type (which can
+   * be used for signing).
    * @param str Object to check.
-   * @return True iff str is a string and a valid address.
+   * @return True iff str is a string and a valid legacy address.
    */
-  public function isValidAddress ($str)
+  public function isLegacyAddress ($str)
   {
     if (!is_string ($str))
       return FALSE;
 
     $res = $this->rpc->executeRPC ("validateaddress", array ($str));
     assert (isset ($res->isvalid));
+    assert (isset ($res->isscript));
+    assert (isset ($res->iswitness));
 
-    return $res->isvalid;
+    return $res->isvalid && !$res->isscript && !$res->iswitness;
   }
 
   /**
